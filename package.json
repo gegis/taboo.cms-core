@@ -1,0 +1,53 @@
+{
+  "name": "@taboo/cms-core",
+  "version": "1.0.0",
+  "description": "Taboo CMS Core",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "./node_modules/.bin/eslint ./lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "keywords": [
+    "cms",
+    "headless",
+    "decoupled",
+    "api"
+  ],
+  "author": "taboo.solutions",
+  "license": "ISC",
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "bunyan-format": "^0.2.1",
+    "ejs": "^2.6.1",
+    "fs-extra": "^7.0.1",
+    "keygrip": "^1.0.3",
+    "koa": "^2.6.2",
+    "koa-better-router": "^2.1.1",
+    "koa-body": "^4.0.4",
+    "koa-cors": "0.0.16",
+    "koa-passport": "^4.1.1",
+    "koa-session": "^5.10.1",
+    "koa-static": "^5.0.0",
+    "lodash": "^4.17.11",
+    "nodemailer": "^5.1.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.15.3"
+  }
+}
