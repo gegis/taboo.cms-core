@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git push github master develop
+git push origin master
 git push github --tags
 npm publish
 

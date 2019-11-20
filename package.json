@@ -15,10 +15,16 @@
     "cms",
     "headless",
     "decoupled",
-    "api"
+    "api",
+    "koa",
+    "react"
   ],
   "author": "taboo.solutions",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gegis/taboo.cms-core.git"
+  },
   "prettier": {
     "trailingComma": "es5",
     "singleQuote": true,
