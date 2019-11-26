@@ -1,27 +1,46 @@
-# Taboo CMS
-
-## Notes
-At the moment it is still in development phase.
-Documentation is coming up.
+# Taboo CMS Core
 
 ## Documentation
-It is using Koa framework. 
-In your own app you have to install it as a dependency:
+This is a core library for  [Taboo CMS](https://www.npmjs.com/package/@taboo/cms).
+
+`@taboo/cms` uses this module to bootstrap the application.
+
+Available exports from this module:
 ```
-npm i taboo-cms
+  _           - lodash
+  start       - to start and bootstrap the server and other utils
+  cwd         - current working directory
+  config      - merged application config
+  app         - app related attributes
+  modules     - all the bootsrtapped modules from ./app/modules
+  logger      - logger function, logger.info('Info'), logger.warn('Warn'), logger.error('Error')
+  arrayHelper - helper for array manipulations
+  filesHelper - helper for file system manipulations
+  apiHelper   - helper for api related functions
+  ejsHelper   - server side templating helper, it uses ejs templates
+  cmsHelper   - cms related (mostly koa.js and variation between apiHelper and filesHelper logic)
+  mailer      - node mailer to send emails
+  sockets     - sockets server io to emit/receive messages
+  events      - events receiver/emitter
+  koaApp      - bootsrapped koa app
+  router      - koa router
+  passport    - authentication passport
+  Model       - to access application Model
+  Service     - to access application Service
+  Helper      - to access application Helper
+  isAllowed   - implementation of ACL based logic to get if resource is allowed.
 ```
 
 To start the server from your own app:
 ```
-const { start, logger } = require('taboo-cms');
+const { start, logger } = require('@taboo/cms-core');
 
 start().catch(error => {
   logger.error(error);
 });
 ```
 
-It will read config and all modules including their config, controllers, models and services from the 
-following app structure:
+It will bootstrap application from the following app structure:
 ```
 app
     assets
@@ -38,11 +57,13 @@ app
             client
                 compontents
                 stores
-                adminClientConfig.js
+                admin.config.js
+                app.config.js
             controllers
+            helpers
             models
             services
-            config.js
+            module.config.js
     policies
     templates
         error
@@ -52,6 +73,7 @@ config
         development.js
         production.js
         staging.js
+    index.js
     local.js
 logs
 node_modules
@@ -64,8 +86,8 @@ package-lock.json
 README.md
 ```
 
-This web app boilerplate which includes basic modules, mongodb adapter,
-build and watch tasks and also React admin side is coming up pretty soon.
+Or simply just use this already built CMS:
+[@taboo/cms](https://www.npmjs.com/package/@taboo/cms)
 
 
 ## CTX custom properties
@@ -83,6 +105,9 @@ build and watch tasks and also React admin side is coming up pretty soon.
   language: 'en',
   locale: 'en-gb',
   translations: {},
+  adminLanguage: 'en',
+  adminLocale: 'en-gb',
+  adminTranslations: {},
   moduleRoute: {
      method: 'GET',
      path: '/',
