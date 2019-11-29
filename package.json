@@ -1,6 +1,6 @@
 {
   "name": "@taboo/cms-core",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Taboo CMS Core",
   "main": "index.js",
   "scripts": {
