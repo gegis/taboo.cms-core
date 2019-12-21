@@ -23,7 +23,7 @@
     "rsuite"
   ],
   "author": "taboo.solutions",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:gegis/taboo.cms-core.git"
