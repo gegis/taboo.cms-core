@@ -1,37 +1,37 @@
 # Taboo CMS Core
 
 ## Documentation
-This is a core library for  [Taboo CMS](https://www.npmjs.com/package/@taboo/cms).
+This is a core library for [Taboo CMS](https://www.npmjs.com/package/@taboo/cms).
 
 [@taboo/cms](https://www.npmjs.com/package/@taboo/cms) uses this module to bootstrap the application.
 
 Available exports from this module:
 ```
-_           - lodash
-start       - to start and bootstrap the server and other utils
-cwd         - current working directory
-config      - merged application config
-app         - app related attributes
-modules     - all the bootsrtapped modules from ./app/modules
-logger      - logger function, logger.info('Info'), logger.warn('Warn'),
-              logger.error('Error')
-arrayHelper - helper for array manipulations
-filesHelper - helper for file system manipulations
-apiHelper   - helper for api related functions
-ejsHelper   - server side templating helper, it uses ejs templates
-cmsHelper   - cms related (mostly koa.js and variation between apiHelper
-              and filesHelper logic)
-mailer      - node mailer to send emails
-sockets     - sockets server io to emit/receive messages
-events      - events receiver/emitter
-koaApp      - bootsrapped koa app
-router      - koa router
-passport    - authentication passport
-Model       - to access application Model
-Service     - to access application Service
-Helper      - to access application Helper
-isAllowed   - implementation of ACL based logic to get if resource
-              is allowed.
+_               - lodash
+start           - to start and bootstrap the server and other utils
+cwd             - current working directory
+config          - merged application config
+app             - app related attributes
+modules         - all the bootsrtapped modules from ./app/modules
+logger          - logger function, logger.info('Info'),
+                  logger.warn('Warn'), logger.error('Error')
+arrayHelper     - helper for array manipulations
+filesHelper     - helper for file system manipulations
+apiHelper       - helper for api related functions
+ejsHelper       - server side templating helper, it uses ejs templates
+cmsHelper       - cms related (mostly koa.js and variation between 
+                  apiHelper and filesHelper logic)
+mailer          - node mailer to send emails
+sockets         - sockets server io to emit/receive messages
+events          - events receiver/emitter
+koaApp          - bootsrapped koa app
+router          - koa router
+passport        - authentication passport
+loadLocales     - preloads all locales
+getAclResources - returns (preloads if needed) acl resources
+getLocales      - returns all locales
+isAllowed       - implementation of ACL based logic to get if resource
+                  is allowed.
 ```
 
 To start the server from your own app:
