@@ -124,7 +124,7 @@ Or simply just use this already built CMS:
 // ctx.view
 {
   _view: 'viewname',
-  _layout: 'layoutname',
+  _theme: 'themename',
   _clientConfig: clientConfig,
   _clientConfigJson: JSON.stringify(clientConfig),
   _version: version,
