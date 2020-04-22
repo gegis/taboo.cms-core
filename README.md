@@ -103,39 +103,70 @@ Or simply just use this already built CMS:
   }
 ]
 
-// ctx.taboo
+// ctx.routeParams
 { 
+  clientConfig: {},
   language: 'en',
   locale: 'en-gb',
   translations: {},
-  adminLanguage: 'en',
-  adminLocale: 'en-gb',
-  adminTranslations: {},
   moduleRoute: {
-     method: 'GET',
-     path: '/',
-     action: [AsyncFunction: index],
-     policies: [ 'isAuthenticated', 'i18n' ],
-     order: 0,
-     modulePath: '/absolute/path/app/modules/main',
+    method: 'GET',
+    path: '/',
+    action: [AsyncFunction: index],
+    policies: [ 'isAuthenticated', 'i18n' ],
+    order: 0,
+    options: {
+        errorResponseAsJson: true,
+        aclResource: 'admin.pages.manage',
+    },
+    modulePath: '/absolute/path/app/modules/main',
   },
+  errorResponseAsJson: true,
+  aclResource: 'admin.pages.manage',
 }
 
-// ctx.view
+// ctx.viewParams
 {
-  _view: 'viewname',
-  _theme: 'themename',
-  _clientConfig: clientConfig,
-  _clientConfigJson: JSON.stringify(clientConfig),
-  _version: version,
-  _env: environment,
-  _debug: debug,
-  metaTitle: client.metaTitle,
-  language: taboo.language,
-  locale: taboo.locale,
-  translations: taboo.translations,
-  flashMessages: ctx.flashMessages,
-  helpers: {},
+  _template: 'standard',
+  _view: 'index',
   // ... all of your custom values to be used in the view
 }
+
+// template params
+{
+  _clientConfig: {
+    env: 'development',
+    version: '2.1.3',
+    debug: true,
+    metaTitle: 'Taboo CMS',
+    language: 'en',
+    locale: 'en-gb',
+    translations: {},
+    admin: { language: 'en', locale: 'en-gb' },
+    languages: [ ],
+    server: { port: 3000 },
+    sockets: { enabled: true, port: null, path: '/socket.io', rooms: [Array] },
+    dateFormat: 'DD/MM/YYYY',
+    dateTimeFormat: 'DD/MM/YYYY HH:mm:ss',
+    // ... all of your custom values to be used in the view
+  },
+  _version: '2.1.3',
+  _env: 'development',
+  _debug: true,
+  metaTitle: 'Taboo CMS',
+  language: 'en',
+  locale: 'en-gb',
+  translations: {},
+  flashMessages: [],
+  _template: 'standard',
+  _view: 'index',
+  helpers: {
+    href: [Function: href],
+    linkPrefix: [Function: linkPrefix],
+    translate: [Function: translate],
+    _data: [Circular],
+    _translateText: [Function: bound _translateText]
+  },
+}
 ```
+
